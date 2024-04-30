@@ -5,7 +5,7 @@ public class WaitNotifyDemo {
     public static void main(String[] args) throws InterruptedException {
         CustomThread customThread = new CustomThread();
         customThread.start();
-//        Thread.sleep(100);    //Child will get a chance and will enter to deadlock
+//        Thread.sleep(100);    //Child may get a chance and will enter to deadlock
         synchronized (customThread) {
             System.out.println("Main Thread is calling wait()");
             //customThread.wait();  //If child gets executed first then it will keep on waiting and thread never dies
