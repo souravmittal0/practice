@@ -1,5 +1,7 @@
 package lambda.intro;
 
+import java.util.function.Function;
+
 public class StringProcessorUsingLambda {
 
     public static void main(String[] args) {
@@ -16,10 +18,20 @@ public class StringProcessorUsingLambda {
 
         //Using LAMBDA EXPRESSION + METHOD REFERENCE
         System.out.println(process("Hello", String::toUpperCase));
+
+        //Using LAMBDA EXPRESSION
+        System.out.println(processUsingFunction("Hello", (s) -> s.toUpperCase()));
+
+        //Using LAMBDA EXPRESSION + METHOD REFERENCE
+        System.out.println(processUsingFunction("Hello", String::toUpperCase));
     }
 
     private static String process(String str, Processor processor) {
         return processor.process(str);
+    }
+
+    private static String processUsingFunction(String str, Function<String, String> function) {
+        return function.apply(str);
     }
 }
 
