@@ -15,5 +15,6 @@ public class varioudReturnStatement {
         finally {
             return 3;
         }
+//        return 0; //unreachable statement
     }
 }
