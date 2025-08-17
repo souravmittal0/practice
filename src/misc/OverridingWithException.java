@@ -7,7 +7,10 @@ class Parent {
     public void method1() throws IOException {
     }
 
-    public Number method2() {
+    public void method2() {
+    }
+
+    public Number method3() {
         return null;
     }
 }
@@ -30,7 +33,12 @@ class Child extends Parent {
     }
 
     @Override
-    public Integer method2() {
+    public void method2() /*throws IOException*/ {
+        //cannot throw checked exception as parent is not throwing
+    }
+
+    @Override
+    public Integer method3() {
         return null;
     }
 }
